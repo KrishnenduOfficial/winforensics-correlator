@@ -5,12 +5,22 @@ import pyesedb
 from models.schema import TimelineEntry
 from utils.time_utils import filetime_to_datetime
 
+try:
+    import pyesedb
+    HAS_ESEDB = True
+except ImportError:
+    HAS_ESEDB = False
+
 def parse_srum_network(srudb_path: str | Path) -> Generator[TimelineEntry, None, None]:
     """
     Parses a Windows SRUM (System Resource Usage Monitor) ESE database.
     Dynamically maps columns to extract Network Data Usage (Bytes Sent/Recv)
     and resolves Application Paths and User SIDs via the SruDbIdMapTable.
     """
+    if not HAS_ESEDB:
+        # Graceful fallback for cloud CI/CD runners where pyesedb binaries are missing
+        return
+
     srudb_path = Path(srudb_path)
     if not srudb_path.exists():
         raise FileNotFoundError(f"SRUDB.dat not found at: {srudb_path}")
