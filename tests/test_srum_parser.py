@@ -32,6 +32,7 @@ def create_mock_table(name, columns_list, records_data):
 
 @patch('parsers.srum_parser.Path.exists')
 @patch('parsers.srum_parser.pyesedb')
+@patch('parsers.srum_parser.HAS_ESEDB', True)
 def test_parse_srum_network(mock_pyesedb, mock_exists):
     """Test that SRUM parser dynamically maps schemas, AppIDs, and User SIDs."""
     mock_exists.return_value = True
