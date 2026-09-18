@@ -9,4 +9,5 @@ class TimelineEntry:
     artifact_type: str
     path: str
     hash_val: Optional[str] = None
+    user_sid: Optional[str] = None  # Added for BAM/DAM attribution
     details: Dict[str, Any] = field(default_factory=dict)
