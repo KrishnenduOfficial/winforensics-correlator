@@ -8,6 +8,7 @@ try:
     import pyesedb
     HAS_ESEDB = True
 except ImportError:
+    pyesedb = None  # Allows mock patching to find the attribute safely during tests
     HAS_ESEDB = False
 
 def parse_srum_network(srudb_path: str | Path) -> Generator[TimelineEntry, None, None]:
