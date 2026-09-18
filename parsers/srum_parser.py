@@ -1,6 +1,5 @@
 from pathlib import Path
 from typing import Generator
-import pyesedb
 
 from models.schema import TimelineEntry
 from utils.time_utils import filetime_to_datetime
