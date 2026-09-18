@@ -34,7 +34,7 @@ WFCR is built using modern Python packaging standards (`pyproject.toml`). It can
 
 ```bash
 # 1. Clone the repository
-git clone [https://github.com/krishnendu1986162002/winforensics-correlator.git](https://github.com/krishnendu1986162002/winforensics-correlator.git)
+git clone https://github.com/krishnendu1986162002/winforensics-correlator.git
 cd winforensics-correlator
 
 # 2. Install the package and dependencies
