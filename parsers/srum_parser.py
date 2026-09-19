@@ -1,3 +1,5 @@
+# Windows SRUM Forensic Artifact Parser
+
 from pathlib import Path
 from typing import Generator
 
