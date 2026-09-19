@@ -1,3 +1,5 @@
+# Windows Forensic Timeline Correlator Engine
+
 from pathlib import Path
 from typing import List, Dict, Any
 from datetime import timedelta, datetime, timezone
